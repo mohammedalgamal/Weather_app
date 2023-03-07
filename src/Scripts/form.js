@@ -15,4 +15,10 @@ export default function getCity() {
     btn.addEventListener("click", () => {
         getData(search.value);
     });
+
+    window.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" && search.value !== "") {
+            getData(search.value);
+        };
+    });
 };
