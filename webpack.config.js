@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/Scripts/index.js",
+    index: "./src/index.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
