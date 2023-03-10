@@ -1,24 +1,19 @@
-import getData from "./data";
-
-function makeForm() {
-    document.body.innerHTML += `
-    <input type="search" name="search" id="search" placeholder="Enter city name">
-    <button id="searchBtn">Search</button>
-    `;
-};
+import makeDomElements from "./dom";
 
 export default function getCity() {
-    makeForm();
     const btn = document.querySelector("#searchBtn");
     const search = document.querySelector("#search");
+    makeDomElements("Cairo");
 
     btn.addEventListener("click", () => {
-        getData(search.value);
+        if (search.value !== "") {
+            makeDomElements(search.value);
+        };
     });
 
     window.addEventListener("keypress", (e) => {
         if (e.key === "Enter" && search.value !== "") {
-            getData(search.value);
+            makeDomElements(search.value);
         };
     });
 };

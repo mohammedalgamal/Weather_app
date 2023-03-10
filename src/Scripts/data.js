@@ -1,3 +1,5 @@
+import capitalize from "./utils";
+
 // eslint-disable-next-line consistent-return
 export default async function getData(city = "cairo", unit = "standard") {
     const APIKey = "d3038b3303b62168dd448fbeb4531d41";
@@ -19,8 +21,12 @@ export default async function getData(city = "cairo", unit = "standard") {
     };
 };
 
-export function getTodayData(fullData) {
-    return fullData;
+export function getCurrentData(fullData) {
+    const currentData = {};
+
+    currentData.weatherDescription = capitalize(fullData.current.weather[0].description);
+
+    return currentData;
 };
 
 export function getDailyData(fullData) {

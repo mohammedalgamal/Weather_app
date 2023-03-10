@@ -1,8 +1,7 @@
-import getData, { getDailyData, getHourlyData, getTodayData } from "./data";
-import getCity from "./form";
+import getData, { getDailyData, getHourlyData, getCurrentData } from "./data";
 
-function makeTodayDom(todayData) {
-    console.log(todayData);
+function makeCurrentDom(currentData) {
+    console.log(currentData);
 };
 
 function makeDailyDom(dailyData) {
@@ -13,16 +12,15 @@ function makeHourlyData(hourlyData) {
     console.log(hourlyData);
 };
 
-export default async function makeDomElements() {
-    const city = getCity();
+export default async function makeDomElements(city) {
     const fullData = await getData(city);
     console.log(fullData);
 
-    const todayData = getTodayData(fullData);
+    const currentData = getCurrentData(fullData);
     const dailyData = getDailyData(fullData);
     const hourlyData = getHourlyData(fullData);
 
-    makeTodayDom(todayData);
+    makeCurrentDom(currentData);
     makeDailyDom(dailyData);
     makeHourlyData(hourlyData);
 };
