@@ -1,3 +1,4 @@
+// eslint-disable-next-line consistent-return
 export default async function getData(city = "cairo", unit = "standard") {
     const APIKey = "d3038b3303b62168dd448fbeb4531d41";
     try {
@@ -12,8 +13,20 @@ export default async function getData(city = "cairo", unit = "standard") {
         };
         const fullResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely,alerts&units=${unit}&APPID=${APIKey}`);
         const fullData = await fullResponse.json();
-        console.log(fullData);
+        return fullData;
     } catch (err) {
         console.log(err);
     };
+};
+
+export function getTodayData(fullData) {
+    return fullData;
+};
+
+export function getDailyData(fullData) {
+    return fullData;
+};
+
+export function getHourlyData(fullData) {
+    return fullData;
 };

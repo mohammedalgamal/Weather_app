@@ -1,7 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./Styles/style.css";
-import getData from "./Scripts/data";
-import getCity from "./Scripts/form";
+import makeDomElements from "./Scripts/dom";
 
-getCity();
-getData();
+makeDomElements();
