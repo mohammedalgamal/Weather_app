@@ -13,10 +13,11 @@ function makeHourlyData(hourlyData) {
 };
 
 export default async function makeDomElements(city) {
-    const fullData = await getData(city);
+    const fullDataArray = await getData(city);
+    const fullData = fullDataArray[0];
     console.log(fullData);
 
-    const currentData = getCurrentData(fullData);
+    const currentData = getCurrentData(fullData, fullDataArray[1], city);
     const dailyData = getDailyData(fullData);
     const hourlyData = getHourlyData(fullData);
 
