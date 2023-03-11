@@ -1,7 +1,7 @@
-import capitalize from "./utils";
+import capitalize, { calculateDateAndTime, round } from "./utils";
 
 // eslint-disable-next-line consistent-return
-export default async function getData(city = "cairo", unit = "standard") {
+export default async function getData(city = "cairo", unit = "metric") {
     const APIKey = "d3038b3303b62168dd448fbeb4531d41";
     let isCairo = true;
     try {
@@ -32,6 +32,8 @@ export function getCurrentData(fullData, isCairo, city) {
 
     currentData.weatherDescription = capitalize(fullData.current.weather[0].description);
     currentData.cityName = isCairo ? "Cairo" : capitalize(city);
+    [currentData.date, currentData.time] = calculateDateAndTime(fullData.timezone);
+    currentData.temp = round(fullData.current.temp);
 
     return currentData;
 };
