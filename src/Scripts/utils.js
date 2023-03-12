@@ -20,3 +20,7 @@ export function calculateDateAndTime(timeZone) {
     const timeOutput = format(zonedDate, timePattern);
     return [dateOutput, timeOutput];
 };
+
+export function getIconURL(code) {
+    return `https://openweathermap.org/img/wn/${code.replace("d", "n")}@2x.png`;
+};
