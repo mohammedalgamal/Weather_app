@@ -1,4 +1,4 @@
-import capitalize, { calculateDateAndTime, getIconURL, round } from "./utils";
+import capitalize, { calculateDateAndTime, getDay, getIconURL, round } from "./utils";
 
 // eslint-disable-next-line consistent-return
 export default async function getData(city = "cairo", unit = "metric") {
@@ -31,27 +31,52 @@ export function getCurrentData(fullData, isCairo, city, unit) {
     const currentData = {};
 
     currentData.weatherDescription = capitalize(fullData.current.weather[0].description);
+
     currentData.cityName = isCairo ? "Cairo" : capitalize(city);
+
     [currentData.date, currentData.time] = calculateDateAndTime(fullData.timezone);
+
     currentData.temp = unit === "metric" ?
         `${round(fullData.current.temp)} °C`
         : `${round(fullData.current.temp)} °F`;
+
     currentData.feelsLike = unit === "metric" ?
         `${round(fullData.current.feels_like)} °C`
         : `${round(fullData.current.feels_like)} °F`;
+
     currentData.humidity = `${round(fullData.current.humidity)}%`;
+
     currentData.rainChance = `${round(fullData.daily[0].pop * 100)}%`;
+
     currentData.windSpeed = unit === "metric" ?
         `${round(fullData.current.wind_speed * 3.6, 1)} km/h`
         : `${round(fullData.current.wind_speed, 1)} mph`;
+
     currentData.iconURL = getIconURL(fullData.current.weather[0].icon);
 
     return currentData;
 };
 
 export function getDailyData(fullData, unit) {
-    console.log(unit);
-    return fullData;
+    const dailyData = {};
+
+    for (let i = 1; i <= 7; i++) {
+        dailyData[`day${i}`] = {};
+
+        dailyData[`day${i}`].dayName = getDay(fullData.timezone, i);
+
+        dailyData[`day${i}`].maxTemp = unit === "metric" ?
+            `${round(fullData.daily[i].temp.max)} °C`
+            : `${round(fullData.daily[i].temp.max)} °F`;
+
+        dailyData[`day${i}`].minTemp = unit === "metric" ?
+            `${round(fullData.daily[i].temp.min)} °C`
+            : `${round(fullData.daily[i].temp.min)} °F`;
+
+        dailyData[`day${i}`].iconURL = getIconURL(fullData.daily[i].weather[0].icon);
+    };
+
+    return dailyData;
 };
 
 export function getHourlyData(fullData, unit) {

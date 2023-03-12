@@ -21,6 +21,19 @@ export function calculateDateAndTime(timeZone) {
     return [dateOutput, timeOutput];
 };
 
+export function getDay(timeZone, dayNumber) {
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"];
+    const todayDate = new Date();
+    const todayZonedDate = utcToZonedTime(todayDate, timeZone);
+    const todayName = format(todayZonedDate, "EEEE");
+    const todayNumber = dayNames.indexOf(todayName);
+
+    const dayOutput = dayNames[(dayNumber + todayNumber) % 7];
+
+    return dayOutput;
+}
+
 export function getIconURL(code) {
     return `https://openweathermap.org/img/wn/${code.replace("d", "n")}@2x.png`;
 };
