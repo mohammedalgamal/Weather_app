@@ -32,7 +32,26 @@ export function getDay(timeZone, dayNumber) {
     const dayOutput = dayNames[(dayNumber + todayNumber) % 7];
 
     return dayOutput;
-}
+};
+
+export function changeHourFormat(hour, hourNumber) {
+    const totalHour = hour + hourNumber;
+    const timeOfDay = (totalHour % 24) >= 12 ? "PM" : "AM";
+
+    const hourOutput = totalHour % 12 !== 0 ? totalHour % 12 : 12;
+
+    return `${hourOutput} ${timeOfDay}`;
+};
+
+export function getHour(timeZone, hourNumber) {
+    const todayDate = new Date();
+    const todayZonedDate = utcToZonedTime(todayDate, timeZone);
+    const nowName = format(todayZonedDate, "H");
+
+    const hourOutput = changeHourFormat(Number(nowName), Number(hourNumber));
+
+    return hourOutput;
+};
 
 export function getIconURL(code) {
     return `https://openweathermap.org/img/wn/${code.replace("d", "n")}@2x.png`;

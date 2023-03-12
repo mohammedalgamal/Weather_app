@@ -1,4 +1,4 @@
-import capitalize, { calculateDateAndTime, getDay, getIconURL, round } from "./utils";
+import capitalize, { calculateDateAndTime, getDay, getHour, getIconURL, round } from "./utils";
 
 // eslint-disable-next-line consistent-return
 export default async function getData(city = "cairo", unit = "metric") {
@@ -80,6 +80,19 @@ export function getDailyData(fullData, unit) {
 };
 
 export function getHourlyData(fullData, unit) {
-    console.log(unit);
-    return fullData;
+    const hourlyData = {};
+
+    for (let i = 1; i <= 24; i++) {
+        hourlyData[`hour${i}`] = {};
+
+        hourlyData[`hour${i}`].hourName = getHour(fullData.timezone, i);
+
+        hourlyData[`hour${i}`].temp = unit === "metric" ?
+            `${round(fullData.hourly[i].temp)} °C`
+            : `${round(fullData.hourly[i].temp)} °F`;
+
+        hourlyData[`hour${i}`].iconURL = getIconURL(fullData.hourly[i].weather[0].icon);
+    };
+
+    return hourlyData;
 };
