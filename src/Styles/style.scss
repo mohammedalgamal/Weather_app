@@ -5,7 +5,19 @@ body, html {
 * {
     padding: 0;
     margin: 0;
-}  
+} 
+
+button,
+input[type="submit"],
+input[type="search"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
   
 body {
     background-image: url("../Images/sunset-1580493.jpg");
@@ -15,26 +27,29 @@ body {
     color: #f5f5f5;
 
     @media (max-width: 4000px) {
-      padding: 6rem;
+      padding: 5.5rem;
     }
   
     @media (max-width: 1200px) {
-      padding: 5rem;
+      padding: 4rem;
     }
   
     @media (max-width: 800px) {
-      padding: 4rem;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 355px) {
+        padding: 1rem;
     }
 
     img {
-        width: 18px;
-        height: auto;
         filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
     }
 
     .current {
         display: flex;
         justify-content: space-between;
+
         .rightCurrent {
             display: flex;
             flex-direction: column;
@@ -47,24 +62,87 @@ body {
 
                 .itemIcon {
                     img {
-                        width: clamp(26px, 34px, 46px);
+                        width: clamp(1.5rem, 1.8vw, 4rem);
                         height: auto;
                     }
                 }
 
                 .itemTexts {
-
                     .itemTitle {
-                        font-size: clamp(12px, 15px, 18px);
+                        font-size: clamp(0.75rem, 1.7vw, 1.25rem);
                     }
 
                     .itemValue {
-                        font-size: clamp(23px, 25px, 27px);
+                        font-size: clamp(1.1rem, 2.2vw, 2rem);
                         font-weight: 500;
                         margin-top: -2px;
                     }
                 }
             }
+        }
+
+        .leftCurrent {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .weatherDescription {
+                font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+                font-weight: 300;
+            }
+            
+            .cityName {
+                font-size: clamp(1rem, 3.5vw, 2rem);
+            }
+
+            .dateAndTime {
+                font-size: clamp(0.7rem, 2.2vw, 1rem);
+            }
+
+            .temp {
+                font-size: clamp(2.1rem, 6vw, 3.5rem);
+                font-weight: 700;
+            }
+            
+            img {
+                width: clamp(4rem, 5vw, 9rem);
+                height: auto;
+            }
+
+            .searchDiv {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                img {
+                    width: clamp(20px, 22px, 24px);
+                    height: auto;
+                }
+
+                img:hover {
+                    transform: scale(1.2);
+                }
+
+                input {
+                    border: none;
+                    border-radius: 8px;
+                    outline: none;
+                    padding: 6px;
+                    background-color: #adadad2b;
+                    color: #f5f5f5;
+                    margin-top: 4px;
+                    width: clamp(10rem, 15vw, 15rem);
+                }
+
+                input::placeholder {
+                    color: #ffffffce;
+                }
+
+                input:focus {
+                    box-shadow: 0 0 0 0.25rem rgba(92, 125, 106, 0.25);
+                }
+            }
+
         }
     }
 }

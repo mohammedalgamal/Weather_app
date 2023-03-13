@@ -7,6 +7,18 @@ body, html {
   margin: 0;
 }
 
+button,
+input[type=submit],
+input[type=search] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 body {
   background-image: url("../Images/sunset-1580493.jpg");
   background-position: center;
@@ -16,22 +28,25 @@ body {
 }
 @media (max-width: 4000px) {
   body {
-    padding: 6rem;
+    padding: 5.5rem;
   }
 }
 @media (max-width: 1200px) {
   body {
-    padding: 5rem;
+    padding: 4rem;
   }
 }
 @media (max-width: 800px) {
   body {
-    padding: 4rem;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 355px) {
+  body {
+    padding: 1rem;
   }
 }
 body img {
-  width: 18px;
-  height: auto;
   filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
 }
 body .current {
@@ -49,14 +64,68 @@ body .current .rightCurrent .currentItem {
   gap: 10px;
 }
 body .current .rightCurrent .currentItem .itemIcon img {
-  width: 34px;
+  width: clamp(1.5rem, 1.8vw, 4rem);
   height: auto;
 }
 body .current .rightCurrent .currentItem .itemTexts .itemTitle {
-  font-size: 15px;
+  font-size: clamp(0.75rem, 1.7vw, 1.25rem);
 }
 body .current .rightCurrent .currentItem .itemTexts .itemValue {
-  font-size: 25px;
+  font-size: clamp(1.1rem, 2.2vw, 2rem);
   font-weight: 500;
   margin-top: -2px;
+}
+body .current .leftCurrent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body .current .leftCurrent .weatherDescription {
+  font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+  font-weight: 300;
+}
+body .current .leftCurrent .cityName {
+  font-size: clamp(1rem, 3.5vw, 2rem);
+}
+body .current .leftCurrent .dateAndTime {
+  font-size: clamp(0.7rem, 2.2vw, 1rem);
+}
+body .current .leftCurrent .temp {
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+  font-weight: 700;
+}
+body .current .leftCurrent img {
+  width: clamp(4rem, 5vw, 9rem);
+  height: auto;
+}
+body .current .leftCurrent .searchDiv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body .current .leftCurrent .searchDiv img {
+  width: 22px;
+  height: auto;
+}
+body .current .leftCurrent .searchDiv img:hover {
+  transform: scale(1.2);
+}
+body .current .leftCurrent .searchDiv input {
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  padding: 6px;
+  background-color: rgba(173, 173, 173, 0.168627451);
+  color: #f5f5f5;
+  margin-top: 4px;
+  width: clamp(10rem, 15vw, 15rem);
+}
+body .current .leftCurrent .searchDiv input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8078431373);
+}
+body .current .leftCurrent .searchDiv input::placeholder {
+  color: rgba(255, 255, 255, 0.8078431373);
+}
+body .current .leftCurrent .searchDiv input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(92, 125, 106, 0.25);
 }/*# sourceMappingURL=style.css.map */
