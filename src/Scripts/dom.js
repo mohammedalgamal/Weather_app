@@ -2,16 +2,24 @@ import getData, { getDailyData, getHourlyData, getCurrentData } from "./data";
 
 function makeCurrentDom(currentData) {
     console.log(currentData);
-    const cityNameDiv = document.querySelector("#cityName");
+    // Left main content
+    const weatherDescription = document.querySelector(".weatherDescription");
+    weatherDescription.innerText = currentData.weatherDescription;
+
+    const cityNameDiv = document.querySelector(".cityName");
     cityNameDiv.innerText = currentData.cityName;
 
-    const tempDiv = document.querySelector("#temp");
+    const dateAndTime = document.querySelector(".dateAndTime");
+    dateAndTime.innerHTML = `${currentData.date} <br> ${currentData.time}`;
+
+    const tempDiv = document.querySelector(".temp");
     tempDiv.innerText = currentData.temp;
 
     const iconImg = document.querySelector("#icon");
     iconImg.src = currentData.iconURL;
     iconImg.alt = currentData.weatherDescription;
 
+    // Right main content
     const feelsLike = document.querySelector(".feelsLike");
     feelsLike.innerText = currentData.feelsLike;
 
