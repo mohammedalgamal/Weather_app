@@ -35,7 +35,7 @@ export function changeTempUnit() {
 export default async function makeDomElements(city, unit) {
     const fullDataArray = await getData(city, unit);
     const fullData = fullDataArray[0];
-    console.log(fullData);
+    // console.log(fullData);
 
     const currentData = getCurrentData(fullData, fullDataArray[1], city, unit);
     const dailyData = getDailyData(fullData, unit);
