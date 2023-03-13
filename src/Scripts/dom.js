@@ -11,6 +11,18 @@ function makeCurrentDom(currentData) {
     const iconImg = document.querySelector("#icon");
     iconImg.src = currentData.iconURL;
     iconImg.alt = currentData.weatherDescription;
+
+    const feelsLike = document.querySelector(".feelsLike");
+    feelsLike.innerText = currentData.feelsLike;
+
+    const humidity = document.querySelector(".humidity");
+    humidity.innerText = currentData.humidity;
+
+    const rainChance = document.querySelector(".chanceOfRain");
+    rainChance.innerText = currentData.rainChance;
+
+    const windSpeed = document.querySelector(".windSpeed");
+    windSpeed.innerText = currentData.windSpeed;
 };
 
 function makeDailyDom(dailyData) {
