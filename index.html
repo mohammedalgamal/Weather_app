@@ -7,32 +7,86 @@
     <script defer src="index.bundle.js"></script>
   </head>
   <body>
+    <div class="upperMain current">
+      <div class="leftCurrent"></div>
+      <div class="rightCurrent">
+        <div class="currentItem">
+          <div class="itemIcon">
+            <img
+              src="../src/Images/feelsLike.png"
+              alt="Feels Like"
+              class="itemIconImg"
+            />
+          </div>
+          <div class="itemTexts">
+            <div class="itemTitle feelsLike">Feels Like</div>
+            <div class="itemValue feelsLike">12</div>
+          </div>
+        </div>
+        <div class="currentItem">
+          <div class="itemIcon">
+            <img
+              src="../src/Images/humidity.png"
+              alt="Humidity"
+              class="itemIconImg"
+            />
+          </div>
+          <div class="itemTexts">
+            <div class="itemTitle humidity">Humidity</div>
+            <div class="itemValue humidity">54</div>
+          </div>
+        </div>
+        <div class="currentItem">
+          <div class="itemIcon">
+            <img
+              src="../src/Images/chanceOfRain.png"
+              alt="Chance of Rain"
+              class="itemIconImg"
+            />
+          </div>
+          <div class="itemTexts">
+            <div class="itemTitle chanceOfRain">Chance of Rain</div>
+            <div class="itemValue chanceOfRain">45%</div>
+          </div>
+        </div>
+        <div class="currentItem">
+          <div class="itemIcon">
+            <img
+              src="../src/Images/windSpeed.png"
+              alt="Wind Speed"
+              class="itemIconImg"
+            />
+          </div>
+          <div class="itemTexts">
+            <div class="itemTitle windSpeed">Wind Speed</div>
+            <div class="itemValue windSpeed">155 km/h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lowerMain"></div>
+
     <input
       type="search"
       name="search"
       id="search"
       placeholder="Enter city name"
     />
-    
+
     <button id="searchBtn">Search</button>
 
     <label class="toggle">
       <input type="checkbox" id="unitCheckBox" checked />
       <span class="slider"></span>
-      <span class="labels" data-on="&#8451" data-off="&#8457"></span>
+      <span class="labels" data-on="°C" data-off="°F"></span>
     </label>
 
-    <div id="cityName">
-      Cairo
-    </div>
+    <div id="cityName">Cairo</div>
 
-    <div id="temp">
-
-    </div>
+    <div id="temp"></div>
 
     <div id="iconDiv">
-      <img id="icon">
+      <img id="icon" />
     </div>
-
   </body>
 </html>
