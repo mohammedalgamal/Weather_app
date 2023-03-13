@@ -54,5 +54,7 @@ export function getHour(timeZone, hourNumber) {
 };
 
 export function getIconURL(code) {
-    return `https://openweathermap.org/img/wn/${code.replace("d", "n")}@2x.png`;
+    const finalCode = Number(code.slice(0, 2)) > 2 ? code.slice(0, 2) : code;
+
+    return `../src/Images/${finalCode}.png`;
 };

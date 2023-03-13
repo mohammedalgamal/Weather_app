@@ -1,1 +1,13 @@
-/*# sourceMappingURL=style.css.map */
+body, html {
+  height: 100%;
+}
+
+body {
+  background-image: url("../Images/sunset-1580493.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body img {
+  filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
+}/*# sourceMappingURL=style.css.map */
