@@ -8,7 +8,39 @@
   </head>
   <body>
     <div class="upperMain current">
-      <div class="leftCurrent"></div>
+      <div class="leftCurrent">
+        <div class="weatherDescription"></div>
+
+        <div class="cityName"></div>
+
+        <div class="dateAndTime"></div>
+
+        <div class="temp"></div>
+
+        <div class="changeDisplay">
+          <label class="toggle">
+            <input type="checkbox" id="unitCheckBox" checked />
+            <span class="slider"></span>
+            <span class="labels" data-on="°C" data-off="°F"></span>
+          </label>
+        </div>
+
+        <div class="iconDiv">
+          <img id="icon" />
+        </div>
+
+        <div class="searchDiv">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Enter city name"
+          />
+
+          <button id="searchBtn">Search</button>
+        </div>
+      </div>
+
       <div class="rightCurrent">
         <div class="currentItem">
           <div class="itemIcon">
@@ -64,29 +96,7 @@
         </div>
       </div>
     </div>
+
     <div class="lowerMain"></div>
-
-    <input
-      type="search"
-      name="search"
-      id="search"
-      placeholder="Enter city name"
-    />
-
-    <button id="searchBtn">Search</button>
-
-    <label class="toggle">
-      <input type="checkbox" id="unitCheckBox" checked />
-      <span class="slider"></span>
-      <span class="labels" data-on="°C" data-off="°F"></span>
-    </label>
-
-    <div id="cityName">Cairo</div>
-
-    <div id="temp"></div>
-
-    <div id="iconDiv">
-      <img id="icon" />
-    </div>
   </body>
 </html>
