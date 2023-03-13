@@ -46,7 +46,7 @@ export function changeTempUnit() {
 
     unitCheckBox.addEventListener("click", () => {
         const unit = unitCheckBox.checked ? "metric" : "imperial";
-        const cityName = document.querySelector("#cityName").innerText;
+        const cityName = document.querySelector(".cityName").innerText;
         // eslint-disable-next-line no-use-before-define
         makeDomElements(cityName, unit);
     });
