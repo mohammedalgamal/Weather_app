@@ -219,17 +219,17 @@ body {
 
             .control {
                 border-radius: 3px;
-                font-size: clamp(0.4rem, 3.5vw, 1rem);
+                font-size: clamp(0.2rem, 3vw, 1rem);
             }
 
             .dailyBtn {
                 width: clamp(2.4rem, 10vw, 3.5rem);
-                height: clamp(1.15rem, 7.3vw, 2.3rem);
+                height: clamp(0.8rem, 7vw, 2.3rem);
             }
 
             .hourlyBtn {
                 width: clamp(3.1rem, 12vw, 4rem);
-                height: clamp(1.15rem, 7.3vw, 2.3rem);
+                height: clamp(0.8rem, 7vw, 2.3rem);
             }
 
             .control.focus {
