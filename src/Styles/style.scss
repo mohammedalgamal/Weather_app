@@ -236,9 +236,12 @@ body {
                 box-shadow: 0 0 0 1px #f5f5f5;
             }
 
-            .control:hover {
-                transform: scale(1.2);
+            @media screen and (orientation: portrait) {
+                .control:hover {
+                    transform: scale(1.2);
+                }
             }
+
         }
     }
 }

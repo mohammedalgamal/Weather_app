@@ -225,6 +225,8 @@ body .lowerMain .controls .hourlyBtn {
 body .lowerMain .controls .control.focus {
   box-shadow: 0 0 0 1px #f5f5f5;
 }
-body .lowerMain .controls .control:hover {
-  transform: scale(1.2);
+@media screen and (orientation: portrait) {
+  body .lowerMain .controls .control:hover {
+    transform: scale(1.2);
+  }
 }/*# sourceMappingURL=style.css.map */
