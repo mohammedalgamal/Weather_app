@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { format, utcToZonedTime } from "date-fns-tz";
 
@@ -56,5 +57,5 @@ export function getHour(timeZone, hourNumber) {
 export function getIconURL(code) {
     const finalCode = Number(code.slice(0, 2)) > 2 ? code.slice(0, 2) : code;
 
-    return `../src/Images/${finalCode}.png`;
+    return `./${finalCode}.png`;
 };
