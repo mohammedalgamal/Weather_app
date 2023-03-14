@@ -153,11 +153,11 @@ body .current .leftCurrent img {
 }
 body .current .leftCurrent .searchDiv {
   display: flex;
-  align-items: center;
+  align-items: normal;
   gap: 8px;
 }
 body .current .leftCurrent .searchDiv img {
-  width: clamp(1rem, 5vw, 1.5rem);
+  width: clamp(0.7rem, 4.2vw, 1.5rem);
   height: auto;
 }
 body .current .leftCurrent .searchDiv img:hover {
@@ -176,11 +176,13 @@ body .current .leftCurrent .searchDiv input {
 body .current .leftCurrent .searchDiv input::-moz-placeholder {
   font-size: clamp(0.4rem, 1.2vw, 1.1rem);
   position: absolute;
+  top: clamp(0.4rem, 0.2vw, 0.7rem);
   color: rgba(255, 255, 255, 0.8078431373);
 }
 body .current .leftCurrent .searchDiv input::placeholder {
   font-size: clamp(0.4rem, 1.2vw, 1.1rem);
   position: absolute;
+  top: clamp(0.4rem, 0.2vw, 0.7rem);
   color: rgba(255, 255, 255, 0.8078431373);
 }
 body .current .leftCurrent .searchDiv input:focus {

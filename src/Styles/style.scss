@@ -162,11 +162,11 @@ body {
 
             .searchDiv {
                 display: flex;
-                align-items: center;
+                align-items: normal;
                 gap: 8px;
 
                 img {
-                    width: clamp(1rem, 5vw, 1.5rem);
+                    width: clamp(0.7rem, 4.2vw, 1.5rem);
                     height: auto;
                 }
 
@@ -188,6 +188,7 @@ body {
                 input::placeholder {
                     font-size: clamp(0.4rem, 1.2vw, 1.1rem);
                     position: absolute;
+                    top: clamp(0.4rem, 0.2vw, 0.7rem);
                     color: #ffffffce;
                 }
 
