@@ -1,11 +1,58 @@
-body, html {
+/* CSS RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
     height: 100%;
   }
-
-* {
-    padding: 0;
-    margin: 0;
-} 
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
 
 button,
 input[type="submit"],
@@ -18,7 +65,9 @@ input[type="search"] {
   cursor: pointer;
   outline: inherit;
 }
-  
+
+/* Actual styling */
+
 body {
     background-image: url("../Images/sunset-1580493.jpg");
     background-position: center;
@@ -27,19 +76,15 @@ body {
     color: #f5f5f5;
 
     @media (max-width: 4000px) {
-      padding: 5.5rem;
+      padding: 4.3rem;
     }
   
     @media (max-width: 1200px) {
-      padding: 4rem;
+      padding: 3rem;
     }
   
     @media (max-width: 800px) {
       padding: 1.5rem;
-    }
-
-    @media (max-width: 355px) {
-        padding: 1rem;
     }
 
     img {
@@ -53,27 +98,27 @@ body {
         .rightCurrent {
             display: flex;
             flex-direction: column;
-            gap: clamp(20px, 24px, 28px);
+            gap: 18px;
             
             .currentItem {
                 display: flex;
                 align-items: flex-start;
-                gap: clamp(8px, 10px, 12px);
+                gap: 10px;
 
                 .itemIcon {
                     img {
-                        width: clamp(1.5rem, 1.8vw, 4rem);
+                        width: clamp(1.3rem, 1.6vw, 2.1rem);
                         height: auto;
                     }
                 }
 
                 .itemTexts {
                     .itemTitle {
-                        font-size: clamp(0.75rem, 1.7vw, 1.25rem);
+                        font-size: clamp(0.5rem, 1.3vw, 1rem);
                     }
 
                     .itemValue {
-                        font-size: clamp(1.1rem, 2.2vw, 2rem);
+                        font-size: clamp(0.8rem, 2vw, 1.6rem);
                         font-weight: 500;
                         margin-top: -2px;
                     }
@@ -84,28 +129,34 @@ body {
         .leftCurrent {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
+
+            div {
+                line-height: 1;
+            }
 
             .weatherDescription {
-                font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+                font-size: clamp(1.3rem, 5.5vw, 3.2rem);
                 font-weight: 300;
+                
             }
             
             .cityName {
-                font-size: clamp(1rem, 3.5vw, 2rem);
+                font-size: clamp(0.7rem, 3.1vw, 1.5rem);
             }
 
             .dateAndTime {
-                font-size: clamp(0.7rem, 2.2vw, 1rem);
+                font-size: clamp(0.4rem, 2vw, 1.1rem);
+                line-height: 1.5;
             }
 
             .temp {
-                font-size: clamp(2.1rem, 6vw, 3.5rem);
+                font-size: clamp(1.6rem, 5.5vw, 3.3rem);
                 font-weight: 700;
             }
             
             img {
-                width: clamp(4rem, 5vw, 9rem);
+                width: clamp(3rem, 4vw, 10rem);
                 height: auto;
             }
 
@@ -115,7 +166,7 @@ body {
                 gap: 8px;
 
                 img {
-                    width: clamp(20px, 22px, 24px);
+                    width: clamp(1rem, 5vw, 1.5rem);
                     height: auto;
                 }
 
