@@ -151,8 +151,9 @@ body .current .leftCurrent .temp {
   font-weight: 700;
 }
 body .current .leftCurrent img {
-  width: clamp(3rem, 4vw, 10rem);
+  width: clamp(3.2rem, 4.3vw, 10.3rem);
   height: auto;
+  margin: 8px;
 }
 body .current .leftCurrent .searchDiv {
   display: flex;
@@ -222,11 +223,17 @@ body .lowerMain .controls .hourlyBtn {
   width: clamp(3.1rem, 12vw, 4rem);
   height: clamp(0.8rem, 7vw, 2.3rem);
 }
+body .lowerMain .controls .control {
+  box-shadow: 0 0 0 1px rgba(165, 165, 165, 0.3529411765);
+}
 body .lowerMain .controls .control.focus {
   box-shadow: 0 0 0 1px #f5f5f5;
 }
-@media screen and (orientation: portrait) {
+@media screen and (orientation: landscape) {
   body .lowerMain .controls .control:hover {
     transform: scale(1.2);
   }
+}
+body .lowerMain .nonActive {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -159,8 +159,9 @@ body {
             }
             
             img {
-                width: clamp(3rem, 4vw, 10rem);
+                width: clamp(3.2rem, 4.3vw, 10.3rem);
                 height: auto;
+                margin: 8px;
             }
 
             .searchDiv {
@@ -232,16 +233,24 @@ body {
                 height: clamp(0.8rem, 7vw, 2.3rem);
             }
 
+            .control {
+              box-shadow: 0 0 0 1px #a5a5a55a;
+            }
+
             .control.focus {
                 box-shadow: 0 0 0 1px #f5f5f5;
             }
 
-            @media screen and (orientation: portrait) {
+            @media screen and (orientation: landscape) {
                 .control:hover {
                     transform: scale(1.2);
                 }
             }
 
+        }
+
+        .nonActive {
+          display: none;
         }
     }
 }
