@@ -105,7 +105,9 @@ body {
     .current {
         display: flex;
         justify-content: space-between;
-
+        @media screen and (orientation: portrait) {
+          margin-bottom: 1rem;
+        }
         .rightCurrent {
             display: flex;
             flex-direction: column;

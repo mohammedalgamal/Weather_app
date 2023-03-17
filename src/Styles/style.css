@@ -114,6 +114,11 @@ body .current {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (orientation: portrait) {
+  body .current {
+    margin-bottom: 1rem;
+  }
+}
 body .current .rightCurrent {
   display: flex;
   flex-direction: column;
