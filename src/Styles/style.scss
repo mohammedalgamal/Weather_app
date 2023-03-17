@@ -17,7 +17,8 @@
     3. Allow percentage-based heights in the application
   */
   html, body {
-    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   /*
     Typographic tweaks!
@@ -52,6 +53,13 @@
   */
   #root, #__next {
     isolation: isolate;
+  }
+  /* 
+    10. Make all images at first 30px width
+  */
+  img {
+    width: 30px;
+    height: auto;
   }
 
 button,
@@ -161,13 +169,12 @@ body {
             img {
                 width: clamp(3.2rem, 4.3vw, 10.3rem);
                 height: auto;
-                margin: 8px;
+                margin-left: 6px;
             }
 
             .searchDiv {
                 display: flex;
                 align-items: center;
-                gap: 8px;
 
                 img {
                     width: clamp(0.5rem, 4.2vw, 1.5rem);
@@ -247,6 +254,54 @@ body {
                 }
             }
 
+        }
+
+        .dailyData {
+          padding: 16px;
+          display: flex;
+          justify-content: space-between;
+          @media screen and (orientation: portrait) {
+            flex-direction: column;
+            justify-content: center;
+          }
+          .day {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @media screen and (orientation: portrait) {
+              flex-direction: row;
+              margin-bottom: 1rem;
+            }
+            
+            .dayName {
+              font-size: clamp(1rem, 2.5vw, 1.5rem);
+              font-weight: 500;
+              margin-bottom: 1rem;
+              @media screen and (orientation: portrait) {
+                margin-right: auto;
+              }
+            }
+
+            .maxTemp{
+              font-size: clamp(1rem, 2.7vw, 1.7rem);
+              line-height: 1;
+              font-weight: 700;
+            }
+
+            .minTemp{
+              font-size: clamp(0.5rem, 1.8vw, 1rem);
+            }
+
+            img {
+              width: clamp(1.6rem, 2.15vw, 5.15rem);
+              height: auto;
+              margin-top: 1rem;
+              @media screen and (orientation: portrait) {
+                margin-top: 0;
+                margin-left: 0.8rem;
+              }
+            }
+          }
         }
 
         .nonActive {

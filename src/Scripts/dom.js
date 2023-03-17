@@ -34,6 +34,27 @@ function makeCurrentDom(currentData) {
 };
 
 function makeDailyDom(dailyData) {
+    document.querySelector(".dailyData").innerHTML = "";
+    for (let i = 1; i <= 7; i++) {
+        document.querySelector(".dailyData").innerHTML += `
+        <div class="day">
+          <div class="dayName">
+            ${dailyData[`day${i}`].dayName}
+          </div>
+          <div class="temp">
+            <div class="maxTemp">
+                ${dailyData[`day${i}`].maxTemp}
+            </div>
+            <div class="minTemp">
+                ${dailyData[`day${i}`].minTemp}
+            </div>
+          </div>
+          <div class="icon">
+            <img src="${dailyData[`day${i}`].iconURL}" alt="icon">
+          </div>
+        </div>
+        `;
+    }
     console.log(dailyData);
 };
 
