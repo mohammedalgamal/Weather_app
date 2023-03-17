@@ -303,6 +303,12 @@ body {
               }
             }
           }
+
+          .day7 {
+            @media screen and (orientation: portrait) {
+              margin-bottom: 0;
+            }
+          }
         }
 
         .nonActive {

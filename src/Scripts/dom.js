@@ -37,7 +37,7 @@ function makeDailyDom(dailyData) {
     document.querySelector(".dailyData").innerHTML = "";
     for (let i = 1; i <= 7; i++) {
         document.querySelector(".dailyData").innerHTML += `
-        <div class="day">
+        <div class="day day${i}">
           <div class="dayName">
             ${dailyData[`day${i}`].dayName}
           </div>

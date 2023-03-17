@@ -296,6 +296,11 @@ body .lowerMain .dailyData .day img {
     margin-left: 0.8rem;
   }
 }
+@media screen and (orientation: portrait) {
+  body .lowerMain .dailyData .day7 {
+    margin-bottom: 0;
+  }
+}
 body .lowerMain .nonActive {
   display: none;
 }/*# sourceMappingURL=style.css.map */
