@@ -209,6 +209,9 @@ body .current .leftCurrent .searchDiv input::placeholder {
 body .current .leftCurrent .searchDiv input:focus {
   box-shadow: 0 0 0 0.25rem rgba(92, 125, 106, 0.25);
 }
+body .lowerMain {
+  margin-top: auto;
+}
 body .lowerMain .controls {
   display: flex;
   gap: 15px;
