@@ -106,7 +106,7 @@ body {
         display: flex;
         justify-content: space-between;
         @media screen and (orientation: portrait) {
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
         }
         .rightCurrent {
             display: flex;
@@ -219,6 +219,7 @@ body {
     }
 
     .lowerMain {
+
       margin-top: auto;
         .controls{
             display: flex;
@@ -313,8 +314,69 @@ body {
           }
         }
 
-        .nonActive {
-          display: none;
+        .hourlyData {
+          .slide {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            @media screen and (orientation: portrait) {
+              flex-direction: column;
+              justify-content: center;
+            }
+              .hour {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              @media screen and (orientation: portrait) {
+                flex-direction: row;
+                margin-bottom: 1rem;
+              }
+
+              .hourName {
+                font-size: clamp(1rem, 2.5vw, 1.5rem);
+                font-weight: 500;
+                margin-bottom: 1rem;
+                @media screen and (orientation: portrait) {
+                  margin-right: auto;
+                }
+              }
+
+              .temp{
+                font-size: clamp(1rem, 2.7vw, 1.7rem);
+                line-height: 1;
+                font-weight: 700;
+              }
+
+              img {
+                width: clamp(1.6rem, 2.15vw, 5.15rem);
+                height: auto;
+                margin-top: 1rem;
+                @media screen and (orientation: portrait) {
+                  margin-top: 0;
+                  margin-left: 0.8rem;
+                }
+              }
+          }
         }
+
+
     }
+    .nonActive {
+      display: none;
+    }
+
+    .carousel-indicators {
+      @media screen and (orientation: landscape) {
+        bottom: auto;
+      }
+    }
+    .carousel-control-next {
+      right: clamp(-3rem, -3vw, -1.5rem);
+      width: auto;
+  }
+  .carousel-control-prev {
+    left: clamp(-3rem, -3vw, -1.5rem);
+    width: auto;
+}
+  }
 }

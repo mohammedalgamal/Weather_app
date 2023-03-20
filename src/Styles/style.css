@@ -116,7 +116,7 @@ body .current {
 }
 @media screen and (orientation: portrait) {
   body .current {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 body .current .rightCurrent {
@@ -306,6 +306,67 @@ body .lowerMain .dailyData .day img {
     margin-bottom: 0;
   }
 }
+body .lowerMain .hourlyData .slide {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (orientation: portrait) {
+  body .lowerMain .hourlyData .slide {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+body .lowerMain .hourlyData .slide .hour {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (orientation: portrait) {
+  body .lowerMain .hourlyData .slide .hour {
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+}
+body .lowerMain .hourlyData .slide .hour .hourName {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+@media screen and (orientation: portrait) {
+  body .lowerMain .hourlyData .slide .hour .hourName {
+    margin-right: auto;
+  }
+}
+body .lowerMain .hourlyData .slide .hour .temp {
+  font-size: clamp(1rem, 2.7vw, 1.7rem);
+  line-height: 1;
+  font-weight: 700;
+}
+body .lowerMain .hourlyData .slide .hour img {
+  width: clamp(1.6rem, 2.15vw, 5.15rem);
+  height: auto;
+  margin-top: 1rem;
+}
+@media screen and (orientation: portrait) {
+  body .lowerMain .hourlyData .slide .hour img {
+    margin-top: 0;
+    margin-left: 0.8rem;
+  }
+}
 body .lowerMain .nonActive {
   display: none;
+}
+@media screen and (orientation: landscape) {
+  body .lowerMain .carousel-indicators {
+    bottom: auto;
+  }
+}
+body .lowerMain .carousel-control-next {
+  right: clamp(-3rem, -3vw, -1.5rem);
+  width: auto;
+}
+body .lowerMain .carousel-control-prev {
+  left: clamp(-3rem, -3vw, -1.5rem);
+  width: auto;
 }/*# sourceMappingURL=style.css.map */

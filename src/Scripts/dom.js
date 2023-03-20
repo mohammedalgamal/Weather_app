@@ -1,7 +1,6 @@
 import getData, { getDailyData, getHourlyData, getCurrentData } from "./data";
 
 function makeCurrentDom(currentData) {
-    console.log(currentData);
     // Left main content
     const weatherDescription = document.querySelector(".weatherDescription");
     weatherDescription.innerText = currentData.weatherDescription;
@@ -54,12 +53,26 @@ function makeDailyDom(dailyData) {
           </div>
         </div>
         `;
-    }
-    console.log(dailyData);
+    };
 };
 
 function makeHourlyDom(hourlyData) {
     console.log(hourlyData);
+    for (let i = 1; i <= 3; i++) {
+        const container = document.querySelector(`[data-index="${i}"]`);
+        container.innerHTML = "";
+        for (let j = 1; j <= 8; j++) {
+            const index = i * j;
+            container.innerHTML += `
+            <div class="hour">
+                <div class="hourName">${hourlyData[`hour${index}`].hourName}</div>
+                <div class="temp">${hourlyData[`hour${index}`].temp}</div>
+                <div class="iconDiv">
+                    <img src="${hourlyData[`hour${index}`].iconURL}" alt="Icon" class="icon" />
+                </div>
+            </div>`;
+        };
+    };
 };
 
 export function changeTempUnit() {
