@@ -9,16 +9,16 @@
 }
 
 /*
-  2. Remove default margin
-*/
+    2. Remove default margin
+  */
 * {
   margin: 0;
   padding: 0;
 }
 
 /*
-  3. Allow percentage-based heights in the application
-*/
+    3. Allow percentage-based heights in the application
+  */
 html,
 body {
   min-height: 100vh;
@@ -26,18 +26,18 @@ body {
 }
 
 /*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 /*
-  6. Improve media defaults
-*/
+    6. Improve media defaults
+  */
 img,
 picture,
 video,
@@ -48,8 +48,8 @@ svg {
 }
 
 /*
-  7. Remove built-in form typography styles
-*/
+    7. Remove built-in form typography styles
+  */
 input,
 button,
 textarea,
@@ -58,8 +58,8 @@ select {
 }
 
 /*
-  8. Avoid text overflows
-*/
+    8. Avoid text overflows
+  */
 p,
 h1,
 h2,
@@ -71,24 +71,24 @@ h6 {
 }
 
 /*
-  9. Create a root stacking context
-*/
+    9. Create a root stacking context
+  */
 #root,
 #__next {
   isolation: isolate;
 }
 
 /* 
-  10. Make all images at first 30px width
-*/
+    10. Make all images at first 30px width
+  */
 img {
   width: 30px;
   height: auto;
 }
 
 button,
-input[type="submit"],
-input[type="search"] {
+input[type=submit],
+input[type=search] {
   background: none;
   color: inherit;
   border: none;
@@ -125,8 +125,7 @@ body {
   }
 }
 body img {
-  filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg)
-    brightness(115%) contrast(92%);
+  filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
 }
 body .current {
   display: flex;
@@ -343,7 +342,8 @@ body .lowerMain .hourlyData .slide .hour {
 @media screen and (orientation: portrait) {
   body .lowerMain .hourlyData .slide .hour {
     flex-direction: row;
-    margin-bottom: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 }
 body .lowerMain .hourlyData .slide .hour .hourName {
@@ -354,6 +354,7 @@ body .lowerMain .hourlyData .slide .hour .hourName {
 @media screen and (orientation: portrait) {
   body .lowerMain .hourlyData .slide .hour .hourName {
     margin-right: auto;
+    margin-bottom: 0px;
   }
 }
 body .lowerMain .hourlyData .slide .hour .temp {
@@ -387,4 +388,4 @@ body .lowerMain .carousel-control-next {
 body .lowerMain .carousel-control-prev {
   left: clamp(-3rem, -3vw, -1.5rem);
   width: auto;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

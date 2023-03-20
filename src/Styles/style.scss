@@ -343,7 +343,8 @@ body {
           justify-content: space-between;
           @media screen and (orientation: portrait) {
             flex-direction: row;
-            margin-bottom: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
           }
 
           .hourName {
@@ -352,6 +353,7 @@ body {
             margin-bottom: 1rem;
             @media screen and (orientation: portrait) {
               margin-right: auto;
+              margin-bottom: 0px;
             }
           }
 
