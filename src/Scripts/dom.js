@@ -58,11 +58,11 @@ function makeDailyDom(dailyData) {
 
 function makeHourlyDom(hourlyData) {
   console.log(hourlyData);
-  for (let i = 1; i <= 3; i++) {
-    const container = document.querySelector(`[data-index="${i}"]`);
+  for (let i = 0; i <= 2; i++) {
+    const container = document.querySelector(`[data-index="${i + 1}"]`);
     container.innerHTML = "";
     for (let j = 1; j <= 8; j++) {
-      const index = i * j;
+      const index = i * 8 + j;
       container.innerHTML += `
             <div class="hour">
                 <div class="hourName">${
