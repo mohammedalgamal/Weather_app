@@ -5,6 +5,11 @@
     <title>Weather app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script defer src="index.bundle.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="upperMain current">
@@ -90,10 +95,65 @@
     <div class="lowerMain">
       <div class="controls">
         <button class="dailyBtn focus control">Daily</button>
+
         <button class="hourlyBtn control">Hourly</button>
       </div>
+
       <div class="dailyData"></div>
-      <div class="hourlyData nonActive">hello</div>
+
+      <div id="c1" class="carousel hourlyData nonActive">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="slide w-100" data-index="1"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="slide w-100" data-index="2"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="slide w-100" data-index="3"></div>
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#c1"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#c1"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#c1"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#c1"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#c1"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </body>
 </html>
