@@ -87,8 +87,8 @@ img {
 }
 
 button,
-input[type=submit],
-input[type=search] {
+input[type="submit"],
+input[type="search"] {
   background: none;
   color: inherit;
   border: none;
@@ -125,7 +125,8 @@ body {
   }
 }
 body img {
-  filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
+  filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg)
+    brightness(115%) contrast(92%);
 }
 body .current {
   display: flex;
@@ -388,4 +389,4 @@ body .lowerMain .carousel-control-next {
 body .lowerMain .carousel-control-prev {
   left: clamp(-3rem, -3vw, -1.5rem);
   width: auto;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
