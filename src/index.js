@@ -15,4 +15,3 @@ getCity();
 
 // Call control buttons activate function
 changeDisplay();
-

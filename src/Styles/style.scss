@@ -3,64 +3,81 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
     2. Remove default margin
   */
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  /*
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
     3. Allow percentage-based heights in the application
   */
-  html, body {
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-  /*
+html,
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+/*
     Typographic tweaks!
     4. Add accessible line-height
     5. Improve text rendering
   */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
     6. Improve media defaults
   */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
     7. Remove built-in form typography styles
   */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
     8. Avoid text overflows
   */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
     9. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
-  }
-  /* 
+#root,
+#__next {
+  isolation: isolate;
+}
+/* 
     10. Make all images at first 30px width
   */
-  img {
-    width: 30px;
-    height: auto;
-  }
+img {
+  width: 30px;
+  height: auto;
+}
 
 button,
 input[type="submit"],
@@ -77,289 +94,284 @@ input[type="search"] {
 /* Actual styling */
 
 body {
-    background-image: url("../Images/sunset-1580493.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #f5f5f5;
+  background-image: url("../Images/sunset-1580493.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 4000px) {
+    padding: 4.3rem;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 3rem;
+  }
+
+  @media (max-width: 800px) {
+    padding: 1.5rem;
+  }
+
+  img {
+    filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg)
+      brightness(115%) contrast(92%);
+  }
+
+  .current {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    @media screen and (orientation: portrait) {
+      margin-bottom: 2rem;
+    }
+    .rightCurrent {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
 
-    @media (max-width: 4000px) {
-      padding: 4.3rem;
-    }
-  
-    @media (max-width: 1200px) {
-      padding: 3rem;
-    }
-  
-    @media (max-width: 800px) {
-      padding: 1.5rem;
+      .currentItem {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+
+        .itemIcon {
+          img {
+            width: clamp(1.3rem, 1.6vw, 2.1rem);
+            height: auto;
+          }
+        }
+
+        .itemTexts {
+          .itemTitle {
+            font-size: clamp(0.5rem, 1.3vw, 1rem);
+          }
+
+          .itemValue {
+            font-size: clamp(0.8rem, 2vw, 1.6rem);
+            font-weight: 500;
+            margin-top: -2px;
+          }
+        }
+      }
     }
 
-    img {
-        filter: invert(100%) sepia(99%) saturate(18%) hue-rotate(33deg) brightness(115%) contrast(92%);
+    .leftCurrent {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      div {
+        line-height: 1;
+      }
+
+      .weatherDescription {
+        font-size: clamp(1.3rem, 5.5vw, 3.2rem);
+        font-weight: 300;
+      }
+
+      .cityName {
+        font-size: clamp(0.7rem, 3.1vw, 1.5rem);
+      }
+
+      .dateAndTime {
+        font-size: clamp(0.4rem, 2vw, 1.1rem);
+        line-height: 1.5;
+      }
+
+      .temp {
+        font-size: clamp(1.6rem, 5.5vw, 3.3rem);
+        font-weight: 700;
+      }
+
+      img {
+        width: clamp(3.2rem, 4.3vw, 10.3rem);
+        height: auto;
+        margin-left: 6px;
+      }
+
+      .searchDiv {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: clamp(0.5rem, 4.2vw, 1.5rem);
+          height: auto;
+        }
+
+        img:hover {
+          transform: scale(1.2);
+        }
+
+        input {
+          border: none;
+          border-radius: 8px;
+          outline: none;
+          padding: 6px;
+          background-color: #adadad2b;
+          color: #f5f5f5;
+          width: clamp(6rem, 12vw, 15rem);
+          @media (max-width: 800px) {
+            height: 25px;
+          }
+          @media (max-width: 500px) {
+            height: 20px;
+          }
+        }
+
+        input::placeholder {
+          font-size: clamp(0.4rem, 1.2vw, 1.1rem);
+          position: absolute;
+          top: clamp(0.4rem, 0.3vw, 0.8rem);
+          color: #ffffffce;
+        }
+
+        input:focus {
+          box-shadow: 0 0 0 0.25rem rgba(92, 125, 106, 0.25);
+        }
+      }
+    }
+  }
+
+  .lowerMain {
+    margin-top: auto;
+    .controls {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-start;
+      @media screen and (orientation: portrait) {
+        justify-content: center;
+      }
+
+      .control {
+        border-radius: 3px;
+        font-size: clamp(0.2rem, 3vw, 1rem);
+      }
+
+      .dailyBtn {
+        width: clamp(2.4rem, 10vw, 3.5rem);
+        height: clamp(0.8rem, 7vw, 2.3rem);
+      }
+
+      .hourlyBtn {
+        width: clamp(3.1rem, 12vw, 4rem);
+        height: clamp(0.8rem, 7vw, 2.3rem);
+      }
+
+      .control {
+        box-shadow: 0 0 0 1px #a5a5a55a;
+      }
+
+      .control.focus {
+        box-shadow: 0 0 0 1px #f5f5f5;
+      }
+
+      @media screen and (orientation: landscape) {
+        .control:hover {
+          transform: scale(1.2);
+        }
+      }
     }
 
-    .current {
+    .dailyData {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (orientation: portrait) {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .day {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen and (orientation: portrait) {
+          flex-direction: row;
+          margin-bottom: 1rem;
+        }
+
+        .dayName {
+          font-size: clamp(1rem, 2.5vw, 1.5rem);
+          font-weight: 500;
+          margin-bottom: 1rem;
+          @media screen and (orientation: portrait) {
+            margin-right: auto;
+          }
+        }
+
+        .maxTemp {
+          font-size: clamp(1rem, 2.7vw, 1.7rem);
+          line-height: 1;
+          font-weight: 700;
+        }
+
+        .minTemp {
+          font-size: clamp(0.5rem, 1.8vw, 1rem);
+        }
+
+        img {
+          width: clamp(1.6rem, 2.15vw, 5.15rem);
+          height: auto;
+          margin-top: 1rem;
+          @media screen and (orientation: portrait) {
+            margin-top: 0;
+            margin-left: 0.8rem;
+          }
+        }
+      }
+
+      .day7 {
+        @media screen and (orientation: portrait) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .hourlyData {
+      .slide {
+        padding: 16px;
         display: flex;
         justify-content: space-between;
         @media screen and (orientation: portrait) {
-          margin-bottom: 2rem;
+          flex-direction: column;
+          justify-content: center;
         }
-        .rightCurrent {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            
-            .currentItem {
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-
-                .itemIcon {
-                    img {
-                        width: clamp(1.3rem, 1.6vw, 2.1rem);
-                        height: auto;
-                    }
-                }
-
-                .itemTexts {
-                    .itemTitle {
-                        font-size: clamp(0.5rem, 1.3vw, 1rem);
-                    }
-
-                    .itemValue {
-                        font-size: clamp(0.8rem, 2vw, 1.6rem);
-                        font-weight: 500;
-                        margin-top: -2px;
-                    }
-                }
-            }
-        }
-
-        .leftCurrent {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            div {
-                line-height: 1;
-            }
-
-            .weatherDescription {
-                font-size: clamp(1.3rem, 5.5vw, 3.2rem);
-                font-weight: 300;
-                
-            }
-            
-            .cityName {
-                font-size: clamp(0.7rem, 3.1vw, 1.5rem);
-            }
-
-            .dateAndTime {
-                font-size: clamp(0.4rem, 2vw, 1.1rem);
-                line-height: 1.5;
-            }
-
-            .temp {
-                font-size: clamp(1.6rem, 5.5vw, 3.3rem);
-                font-weight: 700;
-            }
-            
-            img {
-                width: clamp(3.2rem, 4.3vw, 10.3rem);
-                height: auto;
-                margin-left: 6px;
-            }
-
-            .searchDiv {
-                display: flex;
-                align-items: center;
-
-                img {
-                    width: clamp(0.5rem, 4.2vw, 1.5rem);
-                    height: auto;
-                }
-
-                img:hover {
-                    transform: scale(1.2);
-                }
-
-                input {
-                    border: none;
-                    border-radius: 8px;
-                    outline: none;
-                    padding: 6px;
-                    background-color: #adadad2b;
-                    color: #f5f5f5;
-                    width: clamp(6rem, 12vw, 15rem);
-                    @media (max-width: 800px) {
-                        height: 25px;
-                    }
-                    @media (max-width: 500px) {
-                        height: 20px;
-                    }
-                }
-
-                input::placeholder {
-                    font-size: clamp(0.4rem, 1.2vw, 1.1rem);
-                    position: absolute;
-                    top: clamp(0.4rem, 0.3vw, 0.8rem);
-                    color: #ffffffce;
-                }
-
-                input:focus {
-                    box-shadow: 0 0 0 0.25rem rgba(92, 125, 106, 0.25);
-                }
-            }
-
-        }
-    }
-
-    .lowerMain {
-
-      margin-top: auto;
-        .controls{
-            display: flex;
-            gap: 15px;
-            justify-content: flex-start;
-            @media screen and (orientation: portrait) {
-                justify-content: center;
-            }
-
-            .control {
-                border-radius: 3px;
-                font-size: clamp(0.2rem, 3vw, 1rem);
-            }
-
-            .dailyBtn {
-                width: clamp(2.4rem, 10vw, 3.5rem);
-                height: clamp(0.8rem, 7vw, 2.3rem);
-            }
-
-            .hourlyBtn {
-                width: clamp(3.1rem, 12vw, 4rem);
-                height: clamp(0.8rem, 7vw, 2.3rem);
-            }
-
-            .control {
-              box-shadow: 0 0 0 1px #a5a5a55a;
-            }
-
-            .control.focus {
-                box-shadow: 0 0 0 1px #f5f5f5;
-            }
-
-            @media screen and (orientation: landscape) {
-                .control:hover {
-                    transform: scale(1.2);
-                }
-            }
-
-        }
-
-        .dailyData {
-          padding: 16px;
+        .hour {
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
           @media screen and (orientation: portrait) {
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            margin-bottom: 1rem;
           }
-          .day {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+
+          .hourName {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
             @media screen and (orientation: portrait) {
-              flex-direction: row;
-              margin-bottom: 1rem;
-            }
-            
-            .dayName {
-              font-size: clamp(1rem, 2.5vw, 1.5rem);
-              font-weight: 500;
-              margin-bottom: 1rem;
-              @media screen and (orientation: portrait) {
-                margin-right: auto;
-              }
-            }
-
-            .maxTemp{
-              font-size: clamp(1rem, 2.7vw, 1.7rem);
-              line-height: 1;
-              font-weight: 700;
-            }
-
-            .minTemp{
-              font-size: clamp(0.5rem, 1.8vw, 1rem);
-            }
-
-            img {
-              width: clamp(1.6rem, 2.15vw, 5.15rem);
-              height: auto;
-              margin-top: 1rem;
-              @media screen and (orientation: portrait) {
-                margin-top: 0;
-                margin-left: 0.8rem;
-              }
+              margin-right: auto;
             }
           }
 
-          .day7 {
+          .temp {
+            font-size: clamp(1rem, 2.7vw, 1.7rem);
+            line-height: 1;
+            font-weight: 700;
+          }
+
+          img {
+            width: clamp(1.6rem, 2.15vw, 5.15rem);
+            height: auto;
+            margin-top: 1rem;
             @media screen and (orientation: portrait) {
-              margin-bottom: 0;
+              margin-top: 0;
+              margin-left: 0.8rem;
             }
           }
         }
-
-        .hourlyData {
-          .slide {
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            @media screen and (orientation: portrait) {
-              flex-direction: column;
-              justify-content: center;
-            }
-              .hour {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              @media screen and (orientation: portrait) {
-                flex-direction: row;
-                margin-bottom: 1rem;
-              }
-
-              .hourName {
-                font-size: clamp(1rem, 2.5vw, 1.5rem);
-                font-weight: 500;
-                margin-bottom: 1rem;
-                @media screen and (orientation: portrait) {
-                  margin-right: auto;
-                }
-              }
-
-              .temp{
-                font-size: clamp(1rem, 2.7vw, 1.7rem);
-                line-height: 1;
-                font-weight: 700;
-              }
-
-              img {
-                width: clamp(1.6rem, 2.15vw, 5.15rem);
-                height: auto;
-                margin-top: 1rem;
-                @media screen and (orientation: portrait) {
-                  margin-top: 0;
-                  margin-left: 0.8rem;
-                }
-              }
-          }
-        }
-
-
+      }
     }
     .nonActive {
       display: none;
@@ -373,10 +385,10 @@ body {
     .carousel-control-next {
       right: clamp(-3rem, -3vw, -1.5rem);
       width: auto;
-  }
-  .carousel-control-prev {
-    left: clamp(-3rem, -3vw, -1.5rem);
-    width: auto;
-}
+    }
+    .carousel-control-prev {
+      left: clamp(-3rem, -3vw, -1.5rem);
+      width: auto;
+    }
   }
 }

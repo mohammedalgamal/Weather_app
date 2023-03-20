@@ -1,6 +1,5 @@
 const path = require("path");
 
-
 module.exports = {
   mode: "development",
   entry: {
@@ -31,12 +30,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [
-              ["@babel/preset-env", { targets: "defaults" }]
-            ],
-            plugins: ["@babel/plugin-proposal-class-properties"]
-          }
-        }
+            presets: [["@babel/preset-env", { targets: "defaults" }]],
+            plugins: ["@babel/plugin-proposal-class-properties"],
+          },
+        },
       },
     ],
   },
